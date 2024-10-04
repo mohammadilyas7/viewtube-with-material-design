@@ -1,0 +1,28 @@
+.example-card {
+    max-width: 250px;
+    margin-left: 20px;
+    background-color: rgb(88, 86, 86);
+    margin-top: 10px;
+  }
+  .duration{
+    display:inline-block;
+    width:fit-content;
+    height:fit-content;
+    padding:1px;
+    color:white;
+    background-color: black;
+    position:relative;
+    left:220px;
+    top:-48px;
+  }
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .cardFlex
+  {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+  }

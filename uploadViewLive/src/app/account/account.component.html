@@ -1,0 +1,15 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="sidenavigation">
+      <div style="margin-top: 20px;">
+          <a mat-button href="#" style="width:174px;text-align:left;"><h2 style="margin-left: 0px;">ViewTube</h2></a>
+          <br><a mat-button routerLink="register" style="width:174px;text-align:left;">REgister</a>
+          <br><a mat-button routerLink="login" style="width:174px;text-align:left;">Login</a>
+      </div>
+    </mat-drawer>
+    
+    <mat-drawer-content style="background-color: rgb(46, 44, 44);">
+        <mat-toolbar color="primary"><span>ViewTube accounts</span></mat-toolbar>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  
+  </mat-drawer-container>

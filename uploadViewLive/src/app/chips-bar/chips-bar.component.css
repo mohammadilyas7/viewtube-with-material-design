@@ -1,0 +1,8 @@
+.border
+  {
+    background-color: rgb(88, 86, 86);
+    border-radius: 15px;
+    text-align: center;
+    size: 5px;
+    color: white;
+  }

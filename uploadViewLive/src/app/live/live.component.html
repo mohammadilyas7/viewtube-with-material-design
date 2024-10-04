@@ -1,0 +1,57 @@
+
+<div style="margin-left: 15px;margin-top: 5px;">
+    <h2>Live Stream Editor</h2>
+
+    <form [formGroup]="liveForm">
+        <mat-form-field appearance="fill" style="width: 755px;">
+            <mat-label>Add Title</mat-label>
+            <!-- <input matInput #addtitle="ngModel" name="addtitle" maxlength="100" required ngModel> -->
+            <input matInput formControlName="addtitle">
+        </mat-form-field>
+          
+        <div style="display: flex;">
+            <mat-form-field appearance="fill" style="margin-right: 10px;">
+                <mat-label>July 3, 2021</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="fill" style="width:250px;margin-right: 10px;">
+                <mat-label>From Time</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+             <mat-form-field class="example-full-width" appearance="fill" style="width:250px;margin-right: 10px;">
+                <mat-label>To Time</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>July 2, 2021</mat-label>
+                <input matInput [matDatepicker]="picke" formControlName="picke">
+                <mat-datepicker-toggle matSuffix [for]="picke"></mat-datepicker-toggle>
+                <mat-datepicker #picke></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+    </form>
+
+        <h2>Event Details</h2>
+        <div style="display: flex;">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 500px;">
+                <mat-label>Add Event Details</mat-label>
+                <textarea matInput style="height: 150px;"></textarea>
+            </mat-form-field>
+            <div style="margin-left: 15px;">
+                <mat-form-field  appearance="outline" style="width: 500px;">
+                    <mat-label>Guests</mat-label>
+                    <textarea matInput style="height: 50px;"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-flat-button class="savebu" [disabled]="liveForm.invalid" (click)="saveDetails()">Save</button>
+  
+</div>
+
+  

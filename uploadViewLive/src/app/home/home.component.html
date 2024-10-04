@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">     
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+      <span style="margin-right: 300px;">View Tube</span>
+      <div>
+        <input class="inputText" type="search" placeholder="Search">
+        <hr style="color: white;margin-top: 0%;">
+      </div>
+      <button mat-icon-button><mat-icon>search</mat-icon></button>
+      <mat-icon style="margin-right: 330px;" matTooltip="Audio Search">mic</mat-icon>
+      <button mat-icon-button matTooltip="Notification"><mat-icon>notifications_none</mat-icon></button>
+      <!-- <button mat-icon-button href="http://localhost:4200/upload"><mat-icon>video_call</mat-icon></button> -->
+      <a mat-icon-button routerLink="/studio/upload" matTooltip="Create Video"><mat-icon>video_call</mat-icon></a>
+      <!-- <a mat-button routerLink="live" style="width:174px;text-align:left;">Live</a> -->
+      <button mat-icon-button matTooltip="Apps"><mat-icon>apps</mat-icon></button>
+      <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Manage Profile"><mat-icon>person_outline</mat-icon></button>
+</mat-toolbar>
+
+<!-- Menu -->
+<mat-menu #menu="matMenu">
+      <button mat-menu-item class="iconimg"><mat-icon class="iconimg">settings</mat-icon>Setting</button>
+      <button mat-menu-item class="iconimg"><mat-icon class="iconimg">help</mat-icon>Help</button>
+      <button mat-menu-item class="iconimg"><mat-icon class="iconimg">notifications_off</mat-icon>Disable alerts</button>
+      <button mat-menu-item><mat-icon>feedback</mat-icon>Send Feedback</button>
+</mat-menu>
+
+
+<!-- Auto-resizing sidenav -->
+ <mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+       <div class="iconimg">
+        <a mat-button href="#"><mat-icon>home</mat-icon>&nbsp;Home</a> <br>
+        <!-- <a mat-button href="" style="width:170px;text-align:left;"><mat-icon>home</mat-icon>&nbsp;Home</a> -->
+        <a mat-button href="#"><mat-icon>explore</mat-icon>&nbsp;Explore</a>
+        <a mat-button href="#"><mat-icon>subscriptions</mat-icon>&nbsp;subscriptions</a>
+        <a mat-button href="#"><mat-icon>library_add</mat-icon>&nbsp;Library</a>
+        <a mat-button href="#"><mat-icon>history</mat-icon>&nbsp;History</a>
+
+        <hr style="margin-bottom: 20px;">
+        Sing in to like videos,
+        comment,and subscribe. <br><br>
+        <a mat-button href="#" class="singin"><mat-icon>info</mat-icon>&nbsp; SIGN IN</a>
+        <!-- <button mat-menu-item class="singin"><mat-icon class="singin">info</mat-icon>SIGN IN</button> -->
+      </div>
+    </mat-drawer>  
+    <!-- chips-bar code -->
+    <app-chips-bar></app-chips-bar>
+    <!-- card -->
+  <app-video-content></app-video-content>
+  </mat-drawer-container>

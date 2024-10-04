@@ -1,0 +1,135 @@
+<form #uploadForm="ngForm">
+
+  <div style="display: flex;">
+      <h2 style="color: white;margin-top: 15px;margin-left: 10px;">Video Details</h2>
+      <div><button mat-flat-button class="savebu" [disabled]="uploadForm.invalid">Save</button></div>
+      <h2 style="color: white;margin-top: 15px;margin-left: 10px;">Video Preview</h2>
+  </div>
+
+<div class="grid-container">
+   <div>
+    <mat-form-field appearance="outline" style="width: 570px;">
+      <mat-label>Video Url</mat-label>
+      <input matInput #videoUrl="ngModel" name="videoUrl" required ngModel>
+      <mat-hint>Video Url needs to be of type Youtube Embed</mat-hint>
+    </mat-form-field>
+    <span class="errormsg" [hidden]="videoUrl.valid && videoUrl.touched">Video Url is Required<span style="color: red;">*</span></span>
+
+    <mat-form-field appearance="outline" style="width: 570px;">
+      <mat-label style="background-color: rgb(0,0,0,0);">Title</mat-label>
+      <input matInput #input maxlength="120" #title="ngModel" name="title" required ngModel>
+      <mat-hint align="end" style="color: white;">{{input.value?.length || 0}}/120</mat-hint>
+    </mat-form-field>
+    <span class="errormsg" [hidden]="title.valid && title.touched">title is Required <span style="color: red;">*</span></span>
+
+  </div>
+  <div style="background-color: rgb(88, 86, 86);border-radius: 5px;">
+    <div style="margin-left: 10px;">
+      <br><h3>Description</h3>
+      
+        <div style="margin-bottom: 8px;">Visibility-Public</div> 
+        <div style="margin-bottom: 8px;">Distribution-Only on Monetized Plattions</div>  
+        <div style="margin-bottom: 8px;">Licence -Creative Commens Licence</div>
+    </div>
+  </div>
+  </div>
+
+
+
+<mat-form-field appearance="outline" style="width: 570px;margin-left: 10px;border-radius: 5px;">
+<mat-label>Textarea</mat-label>
+<textarea matInput style="height: 70px;"></textarea>
+</mat-form-field>
+
+<div>
+<mat-form-field appearance="outline" style="width: 570px;margin-left: 10px;">
+<mat-label>Video Duration</mat-label>
+<input matInput >
+<mat-hint>Enter the Duration in the following format P</mat-hint>
+</mat-form-field>
+</div>
+
+<div>
+<mat-form-field appearance="outline" style="width: 570px;margin-left: 10px;">
+<mat-label>Channel Tiltle</mat-label>
+<input matInput #channelTitle="ngModel" name="channelTitle" required ngModel>
+</mat-form-field>
+<div>
+<span style="margin-left: 15px;margin-top:0%" [hidden]="channelTitle.valid && channelTitle.touched">channelTitle is Required <span style="color: red;">*</span></span>
+</div>
+</div>
+</form>
+
+<h2 style="margin-left:10px ;">Audience</h2>
+<p style="margin-left:10px ; font-size: medium;"> Is this Video Made for Kids....?</p>
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button style="margin-left:10px ; font-size: medium;" value="1">Yes, its made for Kids</mat-radio-button> <br> <br>
+  <mat-radio-button  style="margin-left:10px ; font-size: medium;" value="2">Not for kids</mat-radio-button>
+</mat-radio-group><br><br>
+<h2 style="margin-left:10px ;">Age Restriction </h2>
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button style="margin-left:10px ; font-size: medium;" value="1">Yes, Restrict my videos to viewers over 18</mat-radio-button> <br> <br>
+  <mat-radio-button  style="margin-left:10px ; font-size: medium;" value="2">No, don't restrict my videos to viewers over 18</mat-radio-button>
+</mat-radio-group> <br><br>
+<mat-form-field style="margin-left:10px ;"appearance="outline">
+  <mat-label>Recording Date</mat-label>
+  <input matInput [matDatepicker]="picker">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field><br>
+
+<mat-form-field style="margin-left:10px ;" class="Recording-Location" appearance="outline">
+  <mat-label style="color: white;">Country</mat-label>
+  <mat-select class="abc">
+      <mat-option value="valid">India</mat-option>
+      <mat-option value="valid">New York</mat-option>
+      <mat-option value="invalid">London</mat-option>
+      <mat-option value="invalid">Usa</mat-option>
+      <mat-option value="invalid">Chaina</mat-option>
+      <mat-option value="invalid">Saudi</mat-option>
+      <mat-option value="invalid">Turkey</mat-option>
+      <mat-option value="invalid">Plastien</mat-option>
+      <mat-option value="invalid">Iran</mat-option>
+      <mat-option value="invalid">Iraq</mat-option>
+      <mat-option value="invalid">Mexico</mat-option>
+      <mat-option value="invalid">Japan</mat-option>
+      <mat-option value="invalid">Canada</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+<mat-form-field style="margin-left:10px ; width: 230px;"appearance="outline">
+  <mat-label>License</mat-label>
+  <mat-select>
+    <mat-option value="valid">Standard Viewtube License</mat-option>
+    <mat-option value="valid">Creative Common License</mat-option>
+  </mat-select>
+</mat-form-field><br>
+
+<mat-form-field style="margin-left:10px ;"appearance="outline">
+  <mat-label>Distribution</mat-label>
+  <mat-select>
+    <mat-option value="valid">Everywhere</mat-option>
+    <mat-option value="valid">Make this video available only on monetized platforms</mat-option>
+  </mat-select>
+</mat-form-field><br>
+<mat-form-field style="margin-left:10px ;"appearance="outline">
+  <mat-label>Video Category</mat-label>
+  <mat-select>
+    <mat-option value="valid" >Film & Animation</mat-option>
+    <mat-option value="valid">Sports</mat-option>
+    <mat-option value="valid">Entertainment</mat-option>
+    <mat-option value="valid">Gaming</mat-option>
+    <mat-option value="valid">Education</mat-option>
+    <mat-option value="valid">Music</mat-option>
+    <mat-option value="valid">Pets & Animals</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+
+<mat-form-field style="margin-left:10px ;"appearance="outline">
+  <mat-label>Visibility</mat-label>
+  <mat-select>
+    <mat-option  value="valid">Public</mat-option>
+    <mat-option value="valid" >Private</mat-option>
+  </mat-select>
+</mat-form-field>

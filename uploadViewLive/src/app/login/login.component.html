@@ -1,0 +1,23 @@
+<div class="outer-container">
+  <h1>Login</h1>
+
+  <form  #loginform="ngForm" (submit)="logIn(loginform)">
+    <p>
+      <mat-form-field>
+        <mat-label>Email Address</mat-label>
+        <input matInput type="email" #email name="email" ngModel>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" #password name="password" ngModel>
+      </mat-form-field>
+    </p>
+
+    <a mat-stroked-button routerLink="/account/register" color="primary">Register</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button mat-stroked-button color="primary" type="submit" (click)="log(email.value,password.value)">Login</button>
+  </form>
+
+</div>
